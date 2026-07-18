@@ -1,108 +1,84 @@
-# AI 파이어니어
+# AI Pioneer
 
-## 소개
+AI Pioneer is a small, deterministic financial variance review tool for Korean
+students and accounting or finance practitioners. It turns a simple CSV into a
+review-ready Markdown report without uploading financial data to a third party.
 
-AI 파이어니어는 AI를 활용해 사용자의 작업을 더 빠르고 체계적으로 수행할 수 있도록 돕는 오픈소스 기반 도구/코드 프로젝트입니다.
+The project is intentionally narrow: it provides an inspectable baseline that
+can later support documented AI-assisted explanations, issue triage, and
+maintainer automation.
 
-이 프로젝트는 반복적인 작업을 자동화하고, 사용자가 입력한 데이터나 명령을 바탕으로 필요한 결과를 생성하며, AI 기능을 보다 쉽게 실험하고 활용할 수 있도록 설계되었습니다.  
-AI를 처음 접하는 사용자도 복잡한 설정 없이 프로젝트를 실행하고, 다양한 AI 기반 기능을 직접 활용할 수 있는 것을 목표로 합니다.
+## What it does
 
-## 주요 기능
+- Reads UTF-8 CSV files with `account`, `current`, and `prior` columns.
+- Flags changes that exceed both percentage and amount thresholds.
+- Handles comma-separated amounts and accounting negatives such as `(250)`.
+- Treats a new nonzero balance with a zero prior balance as a flagged variance.
+- Produces Korean or English Markdown output.
+- Uses only the Python standard library.
 
-- **AI 기반 작업 자동화**  
-  사용자가 입력한 명령이나 데이터를 바탕으로 반복적인 작업을 자동화할 수 있습니다.
+## Quick start
 
-- **데이터 입력 및 결과 생성**  
-  텍스트, 명령어, 파일 등 다양한 형태의 입력을 처리하고 목적에 맞는 결과물을 생성할 수 있도록 설계되었습니다.
-
-- **모듈화된 코드 구조**  
-  기능별로 코드를 분리하여 유지보수와 확장이 쉽도록 구성되어 있습니다.
-
-- **사용자 친화적인 실행 방식**  
-  복잡한 환경 설정을 최소화하여 누구나 쉽게 다운로드하고 실행할 수 있도록 구성했습니다.
-
-- **오픈소스 기반 확장 가능성**  
-  누구나 코드를 확인하고 개선할 수 있으며, 새로운 기능을 추가하거나 기존 기능을 수정해 프로젝트를 발전시킬 수 있습니다.
-
-## 사용 방법
-
-### 1. 다운로드
-
-아래 명령어를 사용하여 프로젝트를 다운로드합니다.
+Python 3.10 or newer is required.
 
 ```bash
-git clone [프로젝트 주소]
-cd [프로젝트 폴더명]
+git clone https://github.com/noenemysogang/DH.git
+cd DH
+python ai_pioneer.py sample_financials.csv -o report.md
 ```
 
-### 2. 실행
-
-프로젝트 폴더로 이동한 뒤 아래 명령어를 실행합니다.
+Choose explicit review thresholds:
 
 ```bash
-python main.py
+python ai_pioneer.py sample_financials.csv \
+  --percent-threshold 20 \
+  --amount-threshold 1000000 \
+  --locale ko \
+  --top 10 \
+  -o report.md
 ```
 
-필요한 라이브러리가 있는 경우, 먼저 아래 명령어로 설치합니다.
+The thresholds are screening rules, not audit conclusions. Reviewers remain
+responsible for source-data completeness, materiality, and professional
+judgment.
+
+## Input format
+
+```csv
+account,current,prior
+Revenue,125000000,100000000
+Operating expenses,78000000,60000000
+Cash,42000000,50000000
+```
+
+Amounts must use the same currency and unit throughout a file. The tool does
+not infer exchange rates or accounting standards.
+
+## Test
 
 ```bash
-pip install -r requirements.txt
+python -m unittest -v
 ```
 
-## 프로젝트 구조
+## Roadmap
 
-```bash
-AI-Pioneer/
-├── main.py
-├── requirements.txt
-├── README.md
-└── src/
-    └── modules/
-```
+- Publish versioned releases and packaged installation.
+- Add documented, opt-in AI explanations with redaction and cost controls.
+- Add reproducible evaluation fixtures for Korean financial terminology.
+- Automate issue triage, pull-request review, and release notes.
+- Gather real user feedback before expanding the data model.
 
-## 활용 예시
+## Project status
 
-AI 파이어니어는 다음과 같은 상황에서 활용할 수 있습니다.
+AI Pioneer is pre-release. It currently has no external adoption claims. The
+repository is being developed in public so that design choices, tests, and
+limitations remain inspectable.
 
-- AI 기능을 활용한 업무 자동화 실험
-- 반복적인 데이터 처리 작업
-- AI 기반 코드 및 서비스 프로토타입 제작
-- 오픈소스 프로젝트 학습 및 확장
-- 개인 또는 팀 단위의 AI 활용 프로젝트 개발
+## Contributing and security
 
-## 기여 방법
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow and
+[SECURITY.md](SECURITY.md) for private vulnerability reporting guidance.
 
-AI 파이어니어는 오픈소스 프로젝트로, 누구나 프로젝트 개선에 참여할 수 있습니다.
+## License
 
-기여를 원하는 경우 아래 절차를 따라주세요.
-
-1. 이 저장소를 Fork합니다.
-2. 새로운 브랜치를 생성합니다.
-3. 기능 추가 또는 버그 수정을 진행합니다.
-4. 변경 사항을 커밋합니다.
-5. Pull Request를 생성합니다.
-
-```bash
-git checkout -b feature/새로운기능
-git commit -m "Add 새로운 기능"
-git push origin feature/새로운기능
-```
-
-## 개발 목표
-
-AI 파이어니어는 단순한 AI 예제 코드를 넘어, 실제로 활용 가능한 AI 도구로 발전하는 것을 목표로 합니다.
-
-주요 개발 방향은 다음과 같습니다.
-
-- AI 기능의 실용성 강화
-- 사용자가 쉽게 이해할 수 있는 코드 구조 유지
-- 다양한 사용 사례에 적용 가능한 기능 확장
-- 오픈소스 커뮤니티를 통한 지속적인 개선
-
-## 라이선스
-
-MIT License
-
-## 작성자 정보
-
-Sogang Univ 학사 및 KICPA
+MIT. See [LICENSE](LICENSE).
