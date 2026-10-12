@@ -8,6 +8,19 @@ The project is intentionally narrow: it provides an inspectable baseline that
 can later support documented AI-assisted explanations, issue triage, and
 maintainer automation.
 
+## Project identity and contact
+
+- **Project:** AI Pioneer, maintained by 신대환 (Daehwan Shin),
+  [@noenemysogang](https://github.com/noenemysogang).
+- **Website and working example:** https://www.aipioneer-dh.dynv6.net/
+- **Project email:** [hello@aipioneer-dh.dynv6.net](mailto:hello@aipioneer-dh.dynv6.net).
+- **Public development evidence:** [commit history](https://github.com/noenemysogang/DH/commits/main/),
+  [test source](test_ai_pioneer.py), and [CI results](https://github.com/noenemysogang/DH/actions).
+
+This repository is the source for the project website. AI Pioneer is a
+pre-release project; Claude integration is planned and is not yet implemented.
+Repository dates describe development history, not a company's legal incorporation.
+
 ## What it does
 
 - Reads UTF-8 CSV files with `account`, `current`, and `prior` columns.
