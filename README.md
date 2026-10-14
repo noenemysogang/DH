@@ -8,6 +8,19 @@ The project is intentionally narrow: it provides an inspectable baseline that
 can later support documented AI-assisted explanations, issue triage, and
 maintainer automation.
 
+## 잔액브릿지 v0.1.0 · 유료 편의 패키지
+
+잔액브릿지는 로컬 Chrome에서 두 CSV 파일의 잔액을 비교하는 다운로드형 ZIP 패키지입니다.
+
+- 파일별 열 매핑, 누락·중복·기준 잔액 0 예외 확인
+- 비교 결과 CSV와 한국어 요약 다운로드
+- XLSX 직접 입력은 지원하지 않으며, 회계적 판단을 대신하지 않습니다.
+
+이 저장소의 AI Pioneer는 MIT 라이선스로 공개된 오픈소스 프로젝트입니다.
+잔액브릿지는 별도로 구매할 수 있는 편의 패키지이며, 기존 프로젝트의 MIT 라이선스는 그대로 유지됩니다.
+
+[상품 소개 및 구매하기](https://noenemysogang.gumroad.com/l/cwecgs) · 19,000원 · 일회성 구매
+
 ## Project identity and contact
 
 - **Project:** AI Pioneer, maintained by 신대환 (Daehwan Shin),
