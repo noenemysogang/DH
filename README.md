@@ -19,7 +19,7 @@ maintainer automation.
 이 저장소의 AI Pioneer는 MIT 라이선스로 공개된 오픈소스 프로젝트입니다.
 잔액브릿지는 별도로 구매할 수 있는 편의 패키지이며, 기존 프로젝트의 MIT 라이선스는 그대로 유지됩니다.
 
-[상품 소개 및 구매하기](https://noenemysogang.gumroad.com/l/cwecgs) · 19,000원 · 일회성 구매
+[상품 소개 및 구매하기](https://balancebridgetools.gumroad.com/l/cwecgs) · 19,000원 · 일회성 구매
 
 ## Project identity and contact
 
