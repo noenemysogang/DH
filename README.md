@@ -8,18 +8,19 @@ The project is intentionally narrow: it provides an inspectable baseline that
 can later support documented AI-assisted explanations, issue triage, and
 maintainer automation.
 
-## 잔액브릿지 v0.1.0 · 유료 편의 패키지
+## Paid CSV tools bundle · 유료 CSV 도구 2종
 
-잔액브릿지는 로컬 Chrome에서 두 CSV 파일의 잔액을 비교하는 다운로드형 ZIP 패키지입니다.
+Two local CSV tools, delivered as separate ZIP downloads:
 
-- 파일별 열 매핑, 누락·중복·기준 잔액 0 예외 확인
-- 비교 결과 CSV와 한국어 요약 다운로드
-- XLSX 직접 입력은 지원하지 않으며, 회계적 판단을 대신하지 않습니다.
+- **Balance Bridge (잔액브릿지) v0.1.0 — Korean:** compare balances from two CSV files in local Chrome, map columns, review missing/duplicate entries and zero reference balances, and download comparison CSVs and Korean summaries. Direct XLSX input is not supported.
+- **Duplicate Payment Candidate Checker v0.1.0 — English/Korean:** review potential duplicate payments with an English/Korean interface and README, notes and status tracking, and save/reopen support.
 
-이 저장소의 AI Pioneer는 MIT 라이선스로 공개된 오픈소스 프로젝트입니다.
-잔액브릿지는 별도로 구매할 수 있는 편의 패키지이며, 기존 프로젝트의 MIT 라이선스는 그대로 유지됩니다.
+Human review is required. These tools do not replace accounting judgment.
+The purchase provides these two downloadable tool packages. AI Pioneer in this repository remains free and open source under the MIT License; no purchase is required to use it.
 
-[상품 소개 및 구매하기](https://balancebridgetools.gumroad.com/l/cwecgs) · 19,000원 · 일회성 구매
+잔액브릿지(한국어)와 중복 지급 후보 점검 도구(영어·한국어)를 ZIP 2개로 제공하는 유료 번들입니다. 이 저장소의 AI Pioneer는 무료 MIT 오픈소스로 계속 사용할 수 있습니다.
+
+[View bundle / 상품 소개 및 구매하기](https://balancebridgetools.gumroad.com/l/cwecgs) · One-time purchase / 일회성 구매
 
 ## Project identity and contact
 
